@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "057d513a-0006-4618-82da-a0495a32f90c",
+		"name": "vpet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "metadata",
+			"item": [
+				{
+					"name": "post-metadata",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"version\": \"1.0\",\n    \"petTypes\": {\n        \"DOG\": {\n            \"code\": \"DOG\",\n            \"description\": \"dog\",\n            \"properties\": {\n                \"HAPPINESS\": {\n                    \"code\": \"HAPPINESS\",\n                    \"type\": \"number\",\n                    \"max\": 100,\n                    \"min\": 0,\n                    \"rate\": -2,\n                    \"rateUnit\": \"minute\"\n                },\n                \"HUNGER\": {\n                    \"code\": \"HUNGER\",\n                    \"type\": \"number\",\n                    \"max\": \"100\",\n                    \"min\": \"0\",\n                    \"rate\": 5,\n                    \"rateUnit\": \"minute\"\n                }\n            },\n            \"actions\": {\n                \"STROKE\": {\n                    \"code\": \"STROKE\",\n                    \"target\": \"happiness\",\n                    \"effect\": 20\n                },\n                \"FEED\": {\n                    \"code\": \"FEED\",\n                    \"target\": \"hunger\",\n                    \"effect\": -10\n                }\n            }\n        },\n        \"CAT\": {\n            \"code\": \"CAT\",\n            \"description\": \"cat\",\n            \"properties\": {\n                \"HAPPINESS\": {\n                    \"code\": \"HAPPINESS\",\n                    \"type\": \"number\",\n                    \"max\": 100,\n                    \"min\": 0,\n                    \"rate\": -3,\n                    \"rateUnit\": \"minute\"\n                },\n                \"HUNGER\": {\n                    \"code\": \"HUNGER\",\n                    \"type\": \"number\",\n                    \"max\": \"100\",\n                    \"min\": \"0\",\n                    \"rate\": 1,\n                    \"rateUnit\": \"minute\"\n                }\n            },\n            \"actions\": {\n                \"STROKE\": {\n                    \"code\": \"STROKE\",\n                    \"target\": \"HAPPINESS\",\n                    \"effect\": 2\n                },\n                \"FEED\": {\n                    \"code\": \"FEED\",\n                    \"target\": \"HUNGER\",\n                    \"effect\": -15\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/metadata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-metadata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/metadata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-metadata",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"version\": \"1.0\",\n    \"petTypes\": {\n        \"DOG\": {\n            \"code\": \"DOG\",\n            \"description\": \"dog\",\n            \"properties\": {\n                \"HAPPINESS\": {\n                    \"code\": \"HAPPINESS\",\n                    \"type\": \"number\",\n                    \"max\": 100,\n                    \"min\": 0,\n                    \"rate\": -2,\n                    \"rateUnit\": \"minute\"\n                },\n                \"HUNGER\": {\n                    \"code\": \"HUNGER\",\n                    \"type\": \"number\",\n                    \"max\": \"100\",\n                    \"min\": \"0\",\n                    \"rate\": 5,\n                    \"rateUnit\": \"minute\"\n                }\n            },\n            \"actions\": {\n                \"STROKE\": {\n                    \"code\": \"STROKE\",\n                    \"target\": \"happiness\",\n                    \"effect\": 20\n                },\n                \"FEED\": {\n                    \"code\": \"FEED\",\n                    \"target\": \"hunger\",\n                    \"effect\": -10\n                }\n            }\n        },\n        \"CAT\": {\n            \"code\": \"CAT\",\n            \"description\": \"cat\",\n            \"properties\": {\n                \"HAPPINESS\": {\n                    \"code\": \"HAPPINESS\",\n                    \"type\": \"number\",\n                    \"max\": 100,\n                    \"min\": 0,\n                    \"rate\": -3,\n                    \"rateUnit\": \"minute\"\n                },\n                \"HUNGER\": {\n                    \"code\": \"HUNGER\",\n                    \"type\": \"number\",\n                    \"max\": \"100\",\n                    \"min\": \"0\",\n                    \"rate\": 1,\n                    \"rateUnit\": \"minute\"\n                }\n            },\n            \"actions\": {\n                \"STROKE\": {\n                    \"code\": \"STROKE\",\n                    \"target\": \"HAPPINESS\",\n                    \"effect\": 2\n                },\n                \"FEED\": {\n                    \"code\": \"FEED\",\n                    \"target\": \"HUNGER\",\n                    \"effect\": -15\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/metadata/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-metadata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/metadata/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-metadata",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/metadata/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "player",
+			"item": [
+				{
+					"name": "post-player",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"name\": \"200\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-player",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-player-pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players/1/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"1",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-player-pets-2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players/2/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"2",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put-player",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"1-updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/players/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-player",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"first-updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/players/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "post-pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"2\",\n    \"playerId\": \"1\",\n    \"type\": {\n        \"code\": \"DOG\"\n    },\n    \"name\": \"wowo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-pet-invalid-player",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"2\",\n    \"playerId\": \"2\",\n    \"type\": {\n        \"code\": \"DOG\"\n    },\n    \"name\": \"wow\",\n    \"properties\": {\n        \"HAPPINESS\": \"50\",\n        \"HUNGER\": \"50\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-pet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pets/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put-pet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"name\": \"mewo-mewo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pets/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "play-action-stroke",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pets/1/action/STROKE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets",
+								"1",
+								"action",
+								"STROKE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "play-action-feed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pets/1/action/FEED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets",
+								"1",
+								"action",
+								"FEED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pets/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

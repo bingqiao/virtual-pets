@@ -1,0 +1,74 @@
+{
+  "id": "1",
+  "version": "1.0",
+  "petTypes": {
+    "DOG": {
+      "code": "DOG",
+      "description": "dog",
+      "properties": {
+        "HAPPINESS": {
+          "code": "HAPPINESS",
+          "type": "number",
+          "max": 100,
+          "min": 0,
+          "rate": -2,
+          "rateUnit": "minute"
+        },
+        "HUNGER": {
+          "code": "HUNGER",
+          "type": "number",
+          "max": "100",
+          "min": "0",
+          "rate": 5,
+          "rateUnit": "minute"
+        }
+      },
+      "actions": {
+        "STROKE": {
+          "code": "STROKE",
+          "target": "HAPPINESS",
+          "effect": 20
+        },
+        "FEED": {
+          "code": "FEED",
+          "target": "HUNGER",
+          "effect": -10
+        }
+      }
+    },
+    "CAT": {
+      "code": "CAT",
+      "description": "cat",
+      "properties": {
+        "HAPPINESS": {
+          "code": "HAPPINESS",
+          "type": "number",
+          "max": 100,
+          "min": 0,
+          "rate": -3,
+          "rateUnit": "minute"
+        },
+        "HUNGER": {
+          "code": "HUNGER",
+          "type": "number",
+          "max": "100",
+          "min": "0",
+          "rate": 1,
+          "rateUnit": "minute"
+        }
+      },
+      "actions": {
+        "STROKE": {
+          "code": "STROKE",
+          "target": "HAPPINESS",
+          "effect": 2
+        },
+        "FEED": {
+          "code": "FEED",
+          "target": "HUNGER",
+          "effect": -15
+        }
+      }
+    }
+  }
+}

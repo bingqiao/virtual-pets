@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://vpetuser:letmein@${DB_HOST}:27017/vpet
